@@ -250,7 +250,7 @@ private:
         
         
     SingleLinkedList(const SingleLinkedList& other) {    
-  //new   
+  
        
         assert(size_ == 0 && head_.next_node == nullptr);
         SingleLinkedList tmp;    
@@ -261,34 +261,14 @@ private:
            }
             swap(tmp);
            
-// old
-/*
-        // Сначала надо удостовериться, что текущий список пуст
-        assert(size_ == 0 && head_.next_node == nullptr);
-        SingleLinkedList tmp;
-        //скопировать внутрь tmp элементы other 
-        auto it = other.begin();
-         while (it != other.end()) {
-            tmp.PushFront(*it);
-            it++;
-           }
-        SingleLinkedList tmp2;
-          auto it2 = tmp.begin();
-         while (it2 != tmp.end()) {
-            tmp2.PushFront(*it2);
-            it2++;
-           }
-        // После того как элементы скопированы, обмениваем данные текущего списка и tmp
-        swap(tmp2);
-        // Теперь tmp пуст, а текущий список содержит копию элементов other
-*/
+
     }
 
     SingleLinkedList& operator=(const SingleLinkedList& rhs) {
     
     SingleLinkedList tmp;
 
-//new 
+
 
         auto it = rhs.cbefore_begin();
          while (it != rhs.end()) {
@@ -298,23 +278,7 @@ private:
             swap(tmp);
             return *this;
  
-//old
-/*
-        auto it = rhs.begin();
-        while (it != rhs.end()) {
-            tmp.PushFront(*it);
-            it++;  
-        }
-        
-        SingleLinkedList tmp2;
-        auto it2 = tmp.begin();
-        while (it2 != tmp.end()) {
-            tmp2.PushFront(*it2);
-            it2++;
-        }
-        swap(tmp2);
-        return *this;
- */
+
         
     }
 
